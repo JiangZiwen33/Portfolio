@@ -1,15 +1,20 @@
-# Huangshimin Portfolio
+# Huangshimin_portfolio
 
-GitHub Pages 作品集版本。视频使用 B 站嵌入链接，访问网页时需要联网。
+GitHub Pages 静态作品集。
 
-## GitHub Pages 设置
+## 发布方式
 
-在仓库 Settings → Pages 中选择：
+将此文件夹中的以下文件上传到 GitHub 仓库根目录：
 
-- Source: Deploy from a branch
-- Branch: main
-- Folder: / (root)
+- `index.html`
+- `styles.css`
+- `app.js`
+- `portfolio.pdf`
 
-然后访问：
+然后在仓库的 **Settings → Pages** 中选择：
 
-`https://jiangziwen33.github.io/Portfolio/`
+- Source：Deploy from a branch
+- Branch：`main`
+- Folder：`/ (root)`
+
+网页视频使用 B 站嵌入链接，访问网站时需要联网。

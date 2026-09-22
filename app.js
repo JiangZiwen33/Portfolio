@@ -3,15 +3,14 @@ const bilibiliUrl = (bvid) => `https://player.bilibili.com/player.html?bvid=${bv
 const youtubeUrl = (id) => `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&playsinline=1`
 
 const videos = [
-  { title: '《心动小镇》联动《潜水员戴夫》过场动画', bvid: 'BV16FtZ6iE7i', eyebrow: '过场动画', category: 'CINEMATIC', description: '项目：《心动小镇》×《潜水员戴夫》联动过场动画\n角色：分镜设计 & 动态叙事执行\n产出：25S游戏内过场片' },
   { title: '新白娘子联动心动小镇PV前期', bvid: 'BV1dpeq6QEu3', eyebrow: 'PROMOTIONAL PV', category: '前期制作', description: '新白娘子联动心动小镇PV前期。' },
+  { title: '《心动小镇》联动《潜水员戴夫》过场动画', bvid: 'BV16FtZ6iE7i', eyebrow: '过场动画', category: 'CINEMATIC', description: '项目：《心动小镇》×《潜水员戴夫》联动过场动画\n角色：分镜设计 & 动态叙事执行\n产出：25S游戏内过场片' },
   { title: '满分倒霉蛋 · EP01', bvid: 'BV1nfto6TEe4', eyebrow: 'AIGC 短片', category: 'AIGC FILM', description: '第一集《蒲公英的紧急护送》项目说明' },
   { title: '《火炬之光》赛季CG打斗优化片段', bvid: 'BV1dxto6fEBG', eyebrow: '赛季 CG', category: 'ACTION PV', description: '《火炬之光》赛季CG・打斗优化' },
   { title: '2D动画硬币游戏', bvid: 'BV16fto6TEZH', eyebrow: '二维动画', category: '2D ANIMATION', description: '故事梗概与分工情况详见项目说明。' },
   { title: 'Maya动画练习', bvid: 'BV1cfto6MEar', eyebrow: '三维动画', category: 'MAYA ANIMATION', description: 'Maya动画练习。' },
   { title: '手绘动画练习', bvid: 'BV1rfto6TEPV', eyebrow: '二维动画', category: 'HAND-DRAWN ANIMATION', description: '手绘动画练习。' },
 ]
-
 
 const directory = document.querySelector('#video-directory')
 const modal = document.querySelector('#video-modal')
@@ -55,7 +54,6 @@ function setText(video, index) {
 
 function openVideo(index, trigger) {
   selectedIndex = index; opener = trigger
-  modal.classList.remove('is-pdf')
   const video = videos[index]
   player.pause(); player.hidden = true; player.removeAttribute('src')
   pdf.hidden = true; pdf.removeAttribute('src')
@@ -65,7 +63,6 @@ function openVideo(index, trigger) {
 
 function openPdf(trigger) {
   selectedIndex = null; opener = trigger
-  modal.classList.add('is-pdf')
   player.pause(); player.hidden = true; player.removeAttribute('src')
   bilibili.hidden = true; bilibili.removeAttribute('src')
   pdf.src = `${portfolioPdfUrl}#page=1&zoom=page-width&toolbar=0&navpanes=0`; pdf.hidden = false
@@ -78,7 +75,7 @@ function openPdf(trigger) {
 }
 
 function showModal() { modal.hidden = false; document.body.style.overflow = 'hidden'; requestAnimationFrame(() => closeButton.focus()) }
-function closeModal() { player.pause(); player.removeAttribute('src'); bilibili.removeAttribute('src'); pdf.removeAttribute('src'); pdf.hidden = true; modal.classList.remove('is-pdf'); modal.hidden = true; document.body.style.overflow = ''; opener?.focus(); updateState() }
+function closeModal() { player.pause(); player.removeAttribute('src'); bilibili.removeAttribute('src'); pdf.removeAttribute('src'); pdf.hidden = true; modal.hidden = true; document.body.style.overflow = ''; opener?.focus(); updateState() }
 function changeVideo(direction) { selectedIndex = (selectedIndex + direction + videos.length) % videos.length; openVideo(selectedIndex, buttons[selectedIndex]) }
 
 closeButton.addEventListener('click', closeModal)
