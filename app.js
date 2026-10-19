@@ -8,6 +8,7 @@ const videos = [
   { title: '满分倒霉蛋 · EP01', bvid: 'BV1nfto6TEe4', eyebrow: 'AIGC 短片', category: 'AIGC FILM', description: '第一集《蒲公英的紧急护送》项目说明' },
   { title: '《火炬之光》赛季CG打斗优化片段', bvid: 'BV1dxto6fEBG', eyebrow: '赛季 CG', category: 'ACTION PV', description: '《火炬之光》赛季CG・打斗优化' },
   { title: '2D动画硬币游戏', bvid: 'BV16fto6TEZH', eyebrow: '二维动画', category: '2D ANIMATION', description: '故事梗概与分工情况详见项目说明。' },
+  { title: 'RO2过场片段设计', bvid: 'BV1WAJy6mEcS', eyebrow: '过场片段设计', category: 'CINEMATIC', description: 'RO2过场片段设计。' },
   { title: 'Maya动画练习', bvid: 'BV1cfto6MEar', eyebrow: '三维动画', category: 'MAYA ANIMATION', description: 'Maya动画练习。' },
   { title: '手绘动画练习', bvid: 'BV1rfto6TEPV', eyebrow: '二维动画', category: 'HAND-DRAWN ANIMATION', description: '手绘动画练习。' },
 ]
